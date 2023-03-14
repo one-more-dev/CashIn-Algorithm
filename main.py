@@ -54,5 +54,7 @@ money = cashInValidation()
 n = calcNotes(money)
 
 
-
-
+#THINGS TO ADD IN THE FUTURE WOULD BE:
+##  SOME ERROR TREATMENT
+##  A BETTER WAY TO CALL THE MAIN FUNCTION
+##  FIX THE SECOND FUNCTION, calcNotes
