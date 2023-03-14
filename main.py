@@ -1,5 +1,6 @@
 
 print("The software will provide the least bank notes as possible, according to the value you asked")
+print("I wondered how that algorithm would work based on when I withdraw money from the cash machine in my bank")
 
 banknotes = [20,50,100]
 banknotes.sort()
@@ -39,20 +40,24 @@ def calcNotes(cash):
         if sum(total) != cash:
             reduceList -= 1
             tries += 1
-            total.pop(-tries)
+            try:
+                total.pop(-tries)
+            except:
+                print("Not able to finish operation, lack of banknotes. Try another value")
+                break
         else:
-            print("Now let you go!")
+            print(f"Wait to cash the money: ${cash}, {total}")
             break
+            return total
            
         if tries == len(banknotes):
-            break
-
-    return total
-
-
-money = cashInValidation()
-n = calcNotes(money)
+	        print("Handle the money was not possible due the lack of banknotes. Try another value")
+	        break
 
 
+def execute():
+	validCash = cashInValidation()
+	c = calcNotes(validCash)
 
 
+execute()
